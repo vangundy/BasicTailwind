@@ -22,7 +22,7 @@
     "@tailwindcss/ui": "^0.3.1",
     "autoprefixer": "^9.8.5",
     "postcss-cli": "^6.1.2",
-    "tailwindcss": "^1.6.0"
+    "tailwindcss": "^1.9.0"
   },
   "devDependencies": {
     "live-server": "^1.2.1"
