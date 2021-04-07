@@ -1,54 +1,95 @@
+/*@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');*/
 @tailwind base;
-
-/* start custom base styles */
-
-:root {
-    --themePrimary: #0078d4;
-    --themeLighterAlt: #eff6fc;
-    --themeLighter: #deecf9;
-    --themeLight: #c7e0f4;
-    --themeTertiary: #71afe5;
-    --themeSecondary: #2b88d8;
-    --themeDarkAlt: #106ebe;
-    --themeDark: #005a9e;
-    --themeDarker: #004578;
-    --neutralLighterAlt: #faf9f8;
-    --neutralLighter: #f3f2f1;
-    --neutralLight: #edebe9;
-    --neutralQuaternaryAlt: #e1dfdd;
-    --neutralQuaternary: #d0d0d0;
-    --neutralTertiaryAlt: #c8c6c4;
-    --neutralTertiary: #a19f9d;
-    --neutralSecondary: #605e5c;
-    --neutralPrimaryAlt: #3b3a39;
-    --neutralPrimary: #323130;
-    --neutralDark: #201f1e;
-    --black: #000000;
-    --white: #ffffff;
-    --warning: #fff4ce;
-    --warningIcon: #797673;
-    --errorBlock: #fde7e9;
-    --errorBlockIcon: #a80000;
-    --success: #dff6dd;
-    --successIcon: #107c10;
-    --lightGray: #8a8886;
-    --red: #c50f1f;
-    --yellow: #ffaa44;
-    --green: #6bb700;
-    --blue: #0078d4;
-    --magenta: #b4009e;
-}
-
-:not(:defined) {
-    visibility: hidden;
-}
-
-nav a.active {
-    @apply bg-neutralLighter;
-    @apply text-neutralDark;
-}
-
-/* end custom base styles */
-
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    :root {
+        --themePrimary: #0078d4;
+        --themeLighterAlt: #eff6fc;
+        --themeLighter: #deecf9;
+        --themeLight: #c7e0f4;
+        --themeTertiary: #71afe5;
+        --themeSecondary: #2b88d8;
+        --themeDarkAlt: #106ebe;
+        --themeDark: #005a9e;
+        --themeDarker: #004578;
+        --neutralLighterAlt: #faf9f8;
+        --neutralLighter: #f3f2f1;
+        --neutralLight: #edebe9;
+        --neutralQuaternaryAlt: #e1dfdd;
+        --neutralQuaternary: #d0d0d0;
+        --neutralTertiaryAlt: #c8c6c4;
+        --neutralTertiary: #a19f9d;
+        --neutralSecondary: #605e5c;
+        --neutralPrimaryAlt: #3b3a39;
+        --neutralPrimary: #323130;
+        --neutralDark: #201f1e;
+        --black: #000000;
+        --white: #ffffff;
+        --warning: #fff4ce;
+        --warningIcon: #797673;
+        --errorBlock: #fde7e9;
+        --errorBlockIcon: #a80000;
+        --success: #dff6dd;
+        --successIcon: #107c10;
+        --grayStatus: #8a8886;
+        --redStatus: #c50f1f;
+        --yellowStatus: #ffaa44;
+        --greenStatus: #6bb700;
+        --blueStatus: #0078d4;
+        --magentaStatus: #b4009e;
+    }
+}
+
+@layer components {
+    
+}
+
+@layer utilities {
+
+    :not(:defined) {
+        visibility: hidden;
+    }
+
+    .outline-transparent {
+        outline: transparent;
+    }
+
+    .text-overflow-ellipsis {
+        text-overflow: ellipsis;
+    }
+
+    .markdown-body li:not([class]) {
+        @apply list-disc;
+    }
+
+    nav a.active {
+        @apply bg-themeLighter;
+        @apply text-themeDark;
+        @apply font-medium;
+    }
+
+    .validation-summary-errors {
+        @apply text-black;
+    }
+
+    #blazor-error-ui {
+        background: lightyellow;
+        bottom: 0;
+        box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+        display: none;
+        left: 0;
+        padding: 0.6rem 1.25rem 0.7rem 1.25rem;
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+    }
+
+        #blazor-error-ui .dismiss {
+            cursor: pointer;
+            position: absolute;
+            right: 0.75rem;
+            top: 0.5rem;
+        }
+}
